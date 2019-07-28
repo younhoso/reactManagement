@@ -9,14 +9,7 @@ app.use(express.static(path.join(__dirname, 'public/')));
 
 app.get('/api/customers', (req, res)=>{
     res.send([
-        {
-            'id' : 1,
-            'image' : 'https://placeimg.com/64/64/any',
-            'name': 'thdbasgh',
-            'birthday': '961222',
-            'gender': '남자',
-            'job': '대학생'
-          },
+       
           {
             'id' : 2,
             'image' : 'https://placeimg.com/64/64/1',
