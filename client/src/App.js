@@ -44,12 +44,9 @@ class App extends Component {
           <Table className={classes.table}>
             <TableHead>
               <TableRow>
-<<<<<<< HEAD
                 <TableCell>번호</TableCell> 
-=======
                 <TableCell>test</TableCell>
                 <TableCell>번호</TableCell>
->>>>>>> d5a651f14e27fb01d84d511a071936be0cdd4439
                 <TableCell>이미지</TableCell>
                 <TableCell>이름</TableCell>
                 <TableCell>나이</TableCell>
