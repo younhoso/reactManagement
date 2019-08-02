@@ -24,7 +24,7 @@ app.get('/api/customers', (req, res)=>{
             'name': '홍길동',
             'birthday': '960305',
             'gender': '여자',
-            'job': '회원'
+            'job': '회원' 
           },
     ])
 });
