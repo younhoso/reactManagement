@@ -54,7 +54,7 @@ class App extends Component {
     })  //then 성공했을때 웨에 customers에 값들을 저장하겠다.
     .catch((err) => {
       console.log(err)
-    });  //catch 실패 했을때 에러 메세지
+    });  //catch 실패 했을때 에러 메세지 
   }
 
   callApi = async () => { //비동기로 데이터에 접근해서 가져온다.
