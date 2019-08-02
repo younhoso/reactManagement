@@ -27,12 +27,16 @@ class App extends Component {
 
   componentDidMount() { //api 서버에 접근해서 데이터를 받아오는 작업은 componentDidMount에서 할수 있다.
     this.callApi()  //callApi 밑에서 작성한 비동시 함수 실행  
-    .then((res) => this.setState({customers:res}))  //then 성공했을때 웨에 customers에 값들을 저장하겠다.
-    .catch(err => console.log(err));    //catch 실패 했을때 에러 메세지
+    .then((res) => {
+      this.setState({customers: res})
+    })  //then 성공했을때 웨에 customers에 값들을 저장하겠다.
+    .catch((err) => {
+      console.log(err)
+    });  //catch 실패 했을때 에러 메세지
   }
 
   callApi = async () => { //비동기로 데이터에 접근해서 가져온다.
-    const response = await fetch('/api/customers');
+    const response = await fetch('/api/customers'); //api 주소 경로 작성
     const body = await response.json(); //json형식으로 가져온다.
     return body;
   }
@@ -44,9 +48,6 @@ class App extends Component {
           <Table className={classes.table}>
             <TableHead>
               <TableRow>
-                <TableCell>번호</TableCell> 
-                <TableCell>test</TableCell>
-                <TableCell>번호</TableCell>
                 <TableCell>이미지</TableCell>
                 <TableCell>이름</TableCell>
                 <TableCell>나이</TableCell>
@@ -55,7 +56,8 @@ class App extends Component {
               </TableRow>
             </TableHead>
             <TableBody>
-            {this.state.customers ? this.state.customers.map((c) => { return (<Customer key={c.id} id={c.id} image={c.image} name={c.name} birthday={c.birthday} gender={c.gender} job={c.job}></Customer>);
+            {this.state.customers ? this.state.customers.map((c) => { 
+                return (<Customer key={c.id} id={c.id} image={c.image} name={c.name} birthday={c.birthday} gender={c.gender} job={c.job}></Customer>);
             }) : ""}
             </TableBody>
           </Table>
