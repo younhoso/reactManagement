@@ -5,11 +5,11 @@ const os = require("os");
 const app = express();
 const port = process.env.PORT || 5000;
 
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public/')));
 
 app.get('/api/customers', (req, res)=>{
     res.send([
-       
           {
             'id' : 2,
             'image' : 'https://placeimg.com/64/64/1',
