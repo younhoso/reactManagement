@@ -47,7 +47,7 @@ class App extends Component {
   }
 
   componentDidMount() { //api 서버에 접근해서 데이터를 받아오는 작업은 componentDidMount에서 할수 있다.
-    this.timer = setInterval(this.progress, 20);
+    this.timer = setInterval(this.progress, 20); //0.02초 마다 progress 함수가 실행이 된다.
     this.callApi()  //callApi 밑에서 작성한 비동기 함수 실행  
     .then((res) => {
       this.setState({customers: res})
