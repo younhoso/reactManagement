@@ -1,5 +1,6 @@
 import React, {Component}from 'react';
-import Customer from './components/Customer';
+import Customer from './components/Customer.js';
+import CustomerAdd from './components/CustomerAdd.js';
 import './App.css';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -47,8 +48,8 @@ class App extends Component {
   }
 
   componentDidMount() { //api 서버에 접근해서 데이터를 받아오는 작업은 componentDidMount에서 할수 있다.
-    this.timer = setInterval(this.progress, 20);
-    this.callApi()  //callApi 밑에서 작성한 비동시 함수 실행  
+    this.timer = setInterval(this.progress, 20); //0.02초 마다 progress 함수가 실행이 된다.
+    this.callApi()  //callApi 밑에서 작성한 비동기 함수 실행  
     .then((res) => {
       this.setState({customers: res})
     })  //then 성공했을때 웨에 customers에 값들을 저장하겠다.
@@ -71,6 +72,7 @@ class App extends Component {
   render(){
     const {classes} = this.props;
     return (
+      <div>
         <Paper className={classes.root}>
           <Table className={classes.table}>
             <TableHead>
@@ -95,6 +97,8 @@ class App extends Component {
             </TableBody>
           </Table>
         </Paper>
+        <CustomerAdd/>
+      </div>
     );
   }
 }
