@@ -34,6 +34,7 @@ app.get('/api/customers', (req, res)=>{
       res.send(rows);
     }
   );
+
 });
 
 app.use('/image', express.static('./upload'));
